@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pj_logging"
 version = "0.1.0"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 readme = "README.md"
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -14,24 +14,21 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Typing :: Typed",
 ]
-dynamic = ["dependencies"]
+dependencies = ["rich>=13.9"]
 
 authors = [
-    {name = "placeholder", email = "placeholder@abc.com"},
+    {name = "the-citto"},
 ]
 
 [project.license]
 file = "LICENSE"
 
 [project.urls]
-
-[project.scripts]
-pj_logging = "pj_logging:__main__.main"
-
-[project.gui-scripts]
+Repository = "https://github.com/the-citto/pj-logging"
 
 [project.optional-dependencies]
 tests = [
+    "pj_logging[rich]",
     "coverage",
     "pytest",
     "pytest-cov",
@@ -40,17 +37,9 @@ tests = [
     "pytest-pyright",
 ]
 dev = [
-    "coverage",
-    "pytest",
-    "pytest-cov",
-    "pytest-mypy",
-    "pytest-ruff",
-    "pytest-pyright",
+    "pj_logging[tests]",
     "ipython",
 ]
-
-[tool.setuptools.dynamic.dependencies]
-file = ["requirements.lock"]
 
 [tool.setuptools.package-data]
 pj_logging = ["py.typed"]
