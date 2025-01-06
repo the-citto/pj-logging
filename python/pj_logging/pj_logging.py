@@ -7,6 +7,7 @@ import logging.handlers
 import pathlib
 import typing as t
 
+import rich.align
 import rich.panel
 
 
@@ -20,13 +21,16 @@ class PanelHandler(logging.Handler):
         "Error": "red",
         "Critical": "red",
     }
+    fallback_color: str = "white"
+    title_align: rich.align.AlignMethod = "left"
+    show_error_names: bool = True
 
     def emit(self, record: logging.LogRecord) -> None:
         """Emit rich panel."""
         msg = record.getMessage()
         level = record.levelname.capitalize()
-        msg_color = self.colors.get(level, "red")
-        if record.exc_info is not None:
+        msg_color = self.colors.get(level, self.fallback_color)
+        if self.show_error_names and record.exc_info is not None:
             err_class = record.exc_info[0]
             if err_class is not None:
                 level = err_class.__name__
@@ -35,7 +39,7 @@ class PanelHandler(logging.Handler):
             msg,
             title=level,
             border_style=msg_color,
-            title_align="left",
+            title_align=self.title_align,
         )
         rich.print(panel)
 
@@ -73,7 +77,7 @@ class JsonlFormatter(logging.Formatter):
 def set_logger(
     name: str | None = None,
     *,
-    jsonl_log_file_path: pathlib.Path | None = None,
+    jsonl_log_file_path: pathlib.Path | str | None = None,
     jsonl_log_file_size: int = 100_000,
     jsonl_log_backup_count: int = 3,
     rich_panel_log: bool = False,
