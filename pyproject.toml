@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pj_logging"
-version = "0.1.1"
+description = "Panel rich and jsonl logging."
 requires-python = ">=3.11"
 readme = "README.md"
 classifiers = [
@@ -19,6 +19,7 @@ dependencies = ["rich>=13.9"]
 authors = [
     {name = "the-citto"},
 ]
+dynamic = ["version"]
 
 [project.license]
 file = "LICENSE"
@@ -28,7 +29,7 @@ Repository = "https://github.com/the-citto/pj-logging"
 
 [project.optional-dependencies]
 tests = [
-    "pj_logging[rich]",
+    "pj_logging",
     "coverage",
     "pytest",
     "pytest-cov",
@@ -40,6 +41,8 @@ dev = [
     "pj_logging[tests]",
     "ipython",
 ]
+
+[tool.setuptools_scm]
 
 [tool.setuptools.package-data]
 pj_logging = ["py.typed"]
@@ -88,5 +91,4 @@ ignore = [
 known-first-party = ["pj_logging"]
 lines-after-imports = 2
 
-[tool.culting]
 
