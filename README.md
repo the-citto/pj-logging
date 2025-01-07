@@ -1,3 +1,14 @@
+[github_release]: https://img.shields.io/github/release/the-citto/pj_logging.svg?logo=github&logoColor=white&color=orange
+[pypi_version]: https://img.shields.io/pypi/v/pj_logging.svg?logo=python&logoColor=white
+[python_versions]: https://img.shields.io/pypi/pyversions/pj_logging.svg?logo=python&logoColor=white
+[github_license]: https://img.shields.io/github/license/the-citto/pj_logging.svg?logo=github&logoColor=white
+
+[![GitHub Release][github_release]](https://github.com/the-citto/pj_logging/releases/)
+[![PyPI Version][pypi_version]](https://pypi.org/project/pj_logging/)
+[![Python Versions][python_versions]](https://pypi.org/project/pj_logging/)
+[![License][github_license]](https://github.com/the-citto/pj_logging/blob/master/LICENSE)
+<br>
+
 # ▍▞ PJ logging
 
 Simple logging with 
@@ -48,6 +59,7 @@ With this approach, it's possible to change values of the class' attributes
 before adding the handler to the logger.
 
 ```python
+class PanelHandler(logging.Handler):
     colors: t.ClassVar[dict[str, str]] = {
         "Debug": "blue",
         "Info": "green",
