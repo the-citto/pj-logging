@@ -1,12 +1,12 @@
-[github_release]: https://img.shields.io/github/release/the-citto/pj_logging.svg?logo=github&logoColor=white&color=orange
-[pypi_version]: https://img.shields.io/pypi/v/pj_logging.svg?logo=python&logoColor=white
-[python_versions]: https://img.shields.io/pypi/pyversions/pj_logging.svg?logo=python&logoColor=white
-[github_license]: https://img.shields.io/github/license/the-citto/pj_logging.svg?logo=github&logoColor=white
+[github_release]: https://img.shields.io/github/release/the-citto/pj-logging.svg?logo=github&logoColor=white&color=orange
+[pypi_version]: https://img.shields.io/pypi/v/pj-logging.svg?logo=python&logoColor=white
+[python_versions]: https://img.shields.io/pypi/pyversions/pj-logging.svg?logo=python&logoColor=white
+[github_license]: https://img.shields.io/github/license/the-citto/pj-logging.svg?logo=github&logoColor=white
 
-[![GitHub Release][github_release]](https://github.com/the-citto/pj_logging/releases/)
-[![PyPI Version][pypi_version]](https://pypi.org/project/pj_logging/)
-[![Python Versions][python_versions]](https://pypi.org/project/pj_logging/)
-[![License][github_license]](https://github.com/the-citto/pj_logging/blob/master/LICENSE)
+[![GitHub Release][github_release]](https://github.com/the-citto/pj-logging/releases/)
+[![PyPI Version][pypi_version]](https://pypi.org/project/pj-logging/)
+[![Python Versions][python_versions]](https://pypi.org/project/pj-logging/)
+[![License][github_license]](https://github.com/the-citto/pj-logging/blob/master/LICENSE)
 <br>
 
 # ▍▞ PJ logging
