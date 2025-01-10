@@ -92,10 +92,12 @@ def set_logger(
             backupCount=jsonl_log_backup_count,
         )
         _jsonl_handler.setFormatter(JsonlFormatter())
+        _jsonl_handler.set_name("jsonl")
         _jsonl_handler.setLevel(logging.DEBUG)
         _logger.addHandler(_jsonl_handler)
     if rich_panel_log:
         _rich_panel_handler = PanelHandler()
+        _rich_panel_handler.set_name("panel")
         _rich_panel_handler.setLevel(logging.INFO)
         _logger.addHandler(_rich_panel_handler)
     return _logger
